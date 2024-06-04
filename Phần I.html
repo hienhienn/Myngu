@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="read.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Reading page</title>
@@ -146,23 +148,85 @@
                 </a>
             </div>
             </div>
-            <div class="items">
-                <a href="#"><i class="fa-solid fa-expand" style="color: #F47830;"></i></a>
+            <div class="items" style="display: flex;">
+                <a onclick="highlightMode()" id="hlBtn">
+                    <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.5305 21.4446L6.59363 18.3827L5.71033 17.5006V16.1327L12.2958 9.54733L17.1472 14.4L10.5618 20.9854H9.19637L8.26596 20.055L6.87638 21.4446H3.5305ZM13.1573 8.68579L20.5124 1.33188L25.3639 6.18333L18.0087 13.5385L13.1573 8.68579ZM15.9461 1.83333H7.66663V0.625H17.1545L15.9461 1.83333ZM11.8559 5.92354H4.04163V4.71521H13.0642L11.8559 5.92354ZM7.76692 10.0125H0.416626V8.80421H8.97525L7.76692 10.0125Z" fill="#F47920"/>
+                    </svg>
+                </a>
+                    
+                <a href="#"><i class="fa-solid fa-expand" style="color: #F47830;" onclick="fullScreen()"></i></a>
                 <a href="#"><i class="fa-regular fa-bookmark" style="color: #F47830;"></i></a>
-                <a href="#"><i class="fa-solid fa-gear" style="color: #F47830;"></i></a>
+                <!-- <a href="#"><i class="fa-solid fa-gear" style="color: #F47830;"></i></a> -->
+                <ul class="nested-dropdowns custom-dropdowns" style="width: 42px;">
+                    <li style="padding: 0; width: fit-content;">
+                        <a href="#"><i class="fa-solid fa-gear topic-color" style="color: #F47830;"></i></a>
+                        <ul>
+                            <li style="display: flex; justify-content: space-between;">
+                                Chế độ
+                                <div class="flex-box">
+                                <div class="rounded-tag" style="width: 50%; background-color: white; border: 1px solid #212121" onclick="setTheme('light')">Sáng</div>
+                                <div class="rounded-tag" style="width: 50%; background-color: #212121; border: 1px solid white; color: white;" onclick="setTheme('dark')">Tối</div>
+                            </div>
+                            </li>
+                            <li style="display: flex; justify-content: space-between;">
+                                Cỡ chữ
+                                <div class="flex-box">
+                                <div class="rounded-tag" style="width: 33%; background-color: #F47830; color: white;" onclick="setFontSize('font-14')">Nhỏ</div>
+                                <div class="rounded-tag" style="width: 33%; background-color: #F47830; color: white;" onclick="setFontSize('font-16')">Vừa</div>
+                                <div class="rounded-tag" style="width: 33%; background-color: #F47830; color: white;" onclick="setFontSize('font-20')">Lớn</div>
+                            </div>
+                            </li>
+                            <li style=" padding: 8px 0;">
+                                <div style="padding: 0 20px; background-color: white;">Phông chữ</div>
+                                <div class="select-font" id="inter" onclick="setFontFamily('inter')">
+                                    Mặc định
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+                                </div>
+                                <div class="select-font" id="time" style="font-family: 'Times New Roman', Times, serif;" onclick="setFontFamily('time')">
+                                    Time New Roman
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+
+                                </div>
+                                <div class="select-font" id="noto" style="font-family: 'Noto Sans', Times, serif;" onclick="setFontFamily('noto')">
+                                    Noto Sans
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+
+                                </div>
+                                <div class="select-font" id="bitter" style="font-family: 'Bitter', Times, serif;" 
+                                onclick="setFontFamily('bitter')">
+                                    Bitter
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
             </div>
         </div>
           <div class="reading-frame">
+            <div class="arrow-btns">
+                <button onclick="topFunction()" class="ar-btn" id="myBtn" title="Go to top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button onclick="bottomFunction()" class="ar-btn" id="myBtn2" title="Go to bottom">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </button>
+            </div>
+            <script src="./script.js"></script>
+
             <h1 class="H1">CHƯƠNG 1: MÓN ĂN ĐẶC BIỆT</h1>
-            <h2 class="H2" id="1">1. BÚN THANG</h2>
-                <video src="assets/Cách Nấu Bún Thang Ngon  Món Ngon Knorr Cuối Tuần.mp4" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></video>
+            <H2 text-green class="H2 text-green" id="1">1. BÚN THANG</H2 text-green>
+                <video src="assets/Cách Nấu Bún Thang Ngon  Món Ngon Knorr Cuối Tuần.mp4" controls width="60%" class="video-custom"></video>
                 <audio src="assets/bunthang.mp3" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></audio>
                 <p class="custom-p">Nói đến văn hóa ẩm thực Hà Nội, không thể không nhắc đến món <span class="custom-p2">“Bún Thang”</span> - một hương vị ẩm thực thanh tao, tinh tế như chính bản tính nhẹ nhàng, lịch lãm của người Hà Thành.
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 20 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 30 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 6 người</p>
                 <img src="assets/bunthang.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	Thịt lườn gà: 300g</p>
                 <p class="custom-p">•	Xương ống: 500g</p>
                 <p class="custom-p">•	Tôm khô nhỏ: 50g</p>
@@ -175,7 +239,7 @@
                 <p class="custom-p">•	Tỏi: 100g</p>
                 <p class="custom-p">•	Rau răm, ớt, chanh, mắm tôm, hạt nêm Knorr, một ít rượu trắng</p>
                 <p class="custom-p">•	Bún rối nhỏ: 1kg</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Thịt gà luộc chín, xé sợi.</p>
                 <p class="custom-p">•	Giò lụa xắt sợi.</p>
                 <p class="custom-p">•	Trứng đánh rối cùng một chút hạt nêm Knorr và 1 muỗng canh rượu trắng, tráng mỏng, cắt sợi.</p>
@@ -186,13 +250,13 @@
                 <p class="custom-p">•	Tỏi lột vỏ, xắt mỏng ngâm với giấm khoảng 1 giờ.</p>
                 <p class="custom-p">•	Lấy một lượng bún vừa đủ vào tô, sắp lên mặt bún thịt gà, giò, trứng, củ cải, ruốc tôm sau đó chan nước lèo, rắc rau răm lên mặt. Ăn nóng, nêm thêm mắm tôm, chanh, ớt, tỏi ngâm tùy ý.</p>
             
-            <h2 class="H2" id="2" style="margin-top: 50px;">2. BÁNH MÌ, BÒ BÍT-TẾT VỚI HÀNH NGÂM</h2>
+            <H2 text-green class="H2 text-green" id="2" style="margin-top: 50px;">2. BÁNH MÌ, BÒ BÍT-TẾT VỚI HÀNH NGÂM</H2 text-green>
                 <p class="custom-p">Loại bánh này phù hợp để dùng đầu tiên trong bữa tiệc tối hoặc là món khai vị tại một bữa tiệc cocktail. Sự kết hợp của các nguyên liệu phương Đông và phương Tây tạo nên hương vị hấp dẫn cho món ăn. Món ăn này sẽ ngon hơn nếu bạn chọn được phần thịt bò ngon nhất.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 10 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 5 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 6-8 người</p>
                 <img src="assets/banhmibittet.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	0.5 kg thịt sườn bò phi lê, dày khoảng 2.5 cm, lọc bỏ mỡ</p>
                 <p class="custom-p">•	1 tép tỏi, nghiền nát</p>
                 <p class="custom-p">•	1 muỗng canh bơ, làm tan chảy</p>
@@ -203,20 +267,20 @@
                 <p class="custom-p">•	1 muỗng canh bơ</p>
                 <p class="custom-p">•	Hành tím xắt lát mỏng ngâm trong hỗn hợp đường, muối & giấm</p>
                 <p class="custom-p">•	1 bánh mỳ Pháp, cắt thành lát 1.5 cm</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Chuẩn bị hỗn hợp ướp: khuấy đều tỏi, 1 muỗng canh bơ, nước mắm, nước tương, nước, và hạt nêm Knorr cho đến khi hỗn hợp được trộn đều.</p>
                 <p class="custom-p">•	Trộn thịt và hỗn hợp ướp, để trong ít nhất 1 giờ.</p>
                 <p class="custom-p">•	Đun chảy 1 muỗng canh bơ còn lại trên chảo, mở lửa lớn. Cho thịt bò vào áp chảo từ 2 đến 3 phút cho mỗi bên. Lấy miếng thịt ra khỏi chảo để nguội bớt trong khoảng 5 phút.</p>
                 <p class="custom-p">•	Trong lúc đó, nướng các lát bánh mỳ Pháp.</p>
                 <p class="custom-p">•	Cắt mỏng miếng bít tết theo độ dày mong muốn. Dùng với bánh mỳ và hành muối.</p>
 
-            <h2 class="H2" id="3" style="margin-top: 50px;">3. SƯỜN CỐT LẾT CHIÊN XÙ</h2>
+            <H2 text-green class="H2 text-green" id="3" style="margin-top: 50px;">3. SƯỜN CỐT LẾT CHIÊN XÙ</H2 text-green>
                 <p class="custom-p">Món <span class="custom-p2">“Sườn cốt lết”</span> này cũng tương tự như món tonkatsu của Nhật, được ướp, tẩm bằng bột chiên xù, và rán cho tới khi nâu vàng. Món ăn này thường được dùng với cơm, dưa muối, và nước sốt mận ngọt.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/suoncotlet.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	4 miếng cốt lết heo không xương, không dày quá 1.8 cm
                 <p class="custom-p">•	Hạt tiêu đen, đã xay</p>
                 <p class="custom-p">•	1 muỗng canh rượu gạo</p>
@@ -227,20 +291,20 @@
                 <p class="custom-p">•	1 chén bột chiên xù</p>
                 <p class="custom-p">•	Dầu thực vật để chiên</p>
                 <p class="custom-p">•	1 tép tỏi, nghiền nát</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Hỗn hợp ướp: Khuấy đều tỏi, rượu gạo, nước tương, Hạt nêm Knorr cho đến khi hỗn hợp được trộn đều.</p>
                 <p class="custom-p">•	Nêm thịt heo cốt lết với hạt tiêu đen xay. Cho thịt heo vào bát nhựa cùng hỗn hợp ướp sao cho miếng cốt lết được phủ đều sốt.</p>
                 <p class="custom-p">•	Cho vào tủ lạnh trong ít nhất 1 giờ để ướp.</p>
                 <p class="custom-p">•	Lắc cốt lết heo để loại bỏ sốt thừa. Lăn cốt lết qua bột năng, sau đó là trứng, rồi bột chiên xù.</p>
                 <p class="custom-p">•	Trong một chảo sâu lòng, đổ dầu đủ để ngập khoảng 2.5 cm lòng chảo. Khi dầu được làm nóng đến 180°C, chiên sườn cốt lết đến khi vàng nâu, trở mặt cho chín vàng 2 bên. Thịt chín vớt ra thấm ráo dầu. Ăn cùng với cơm gạo hương lài.</p>
 
-            <h2 class="H2" id="4" style="margin-top: 50px;">4. CANH NẤM VÀ ĐẬU PHỤ</h2>
+            <H2 text-green class="H2 text-green" id="4" style="margin-top: 50px;">4. CANH NẤM VÀ ĐẬU PHỤ</H2 text-green>
                 <p class="custom-p">Đây là món canh không béo nhưng vẫn thịnh soạn. Vị ngọt của nấm, vị cay của tỏi và tiêu, vị chua của giấm, và vị bùi của trứng cùng hành lá tạo nên sự cân bằng tuyệt vời, kết hợp các hương vị riêng biệt thành một món canh ngon.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 6 người</p>
                 <img src="assets/canhnam.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	5 muỗng canh Hạt nêm Knorr</p>
                 <p class="custom-p">•	5 chén nước</p>
                 <p class="custom-p">•	2 chén nấm tai mèo tươi, xắt lát mỏng</p>
@@ -257,19 +321,19 @@
                 <p class="custom-p">•	3 muỗng canh giấm gạo hoặc giấm đỏ</p>
                 <p class="custom-p">•	2 cây hành lá, cắt nhỏ</p>
                 <p class="custom-p">•	1/4 chén rau mùi cắt nhỏ</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Cho nước, hạt nêm Knorr, nấm tai mèo, măng, gừng, tỏi, ớt, và một tí nước tương vào chảo. Đun sôi, sau đó tiếp tục đun nhỏ lửa.</p>
                 <p class="custom-p">•	Trộn nước tương, dấm và dầu mè với nhau. Cho đậu hũ vào và đảo để kết hợp với hỗn hợp.</p>
                 <p class="custom-p">•	Đun sôi nước dùng trở lại và cho thêm nấm đông cô, đậu hũ cùng với toàn bộ hỗn hợp ướp vào. Cho trứng vào từ từ và khuấy chậm để tạo sợi vân dài và mỏng. Nêm với tiêu xay.</p>
                 <p class="custom-p">•	Trang trí với hành lá và ngò.</p>
         
-            <h2 class="H2" id="5" style="margin-top: 50px;">5. NGHÊU HẤP HÚNG QUẾ</h2>
+            <H2 text-green class="H2 text-green" id="5" style="margin-top: 50px;">5. NGHÊU HẤP HÚNG QUẾ</H2 text-green>
                 <p class="custom-p">Nghêu tươi được hấp trong nước sốt đầy hương vị từ tỏi, rượu gạo và nước mắm. Húng quế Thái Lan góp thêm hương thơm ngọt ngào cho nghêu, để thưởng thức cùng chén cơm gạo hương lài giản dị.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 10 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 đến 6 người</p>
                 <img src="assets/ngheuhap.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	1.35kg nghêu còn vỏ, đã cọ sạch</p>
                 <p class="custom-p">•	1 muỗng canh dầu thực vật</p>
                 <p class="custom-p">•	4 tép tỏi, băm nhỏ</p>
@@ -279,7 +343,7 @@
                 <p class="custom-p"> •	1 muỗng cà phê hạt nêm Knorr</p>
                 <p class="custom-p"> •	Tiêu đen xay để tạo hương vị</p>
                 <p class="custom-p"> •	1 chén lá húng quế Thái xắt nhỏ</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Trong một bát nhỏ, trộn đều rượu gạo, nước mắm, và Hạt nêm Knorr.</p>
                 <p class="custom-p">•	Đun nóng dầu trong chảo với nhiệt độ trung bình cao và xào tỏi cho đến khi có mùi thơm. Thêm ớt vào xào trong 10 giây.</p>
                 <p class="custom-p">•	Thêm rượu và hỗn hợp nước mắm, đun sôi.</p>
@@ -287,13 +351,13 @@
                 <p class="custom-p">•	Nêm với tiêu đen xay. Thêm lá húng quế, đậy nắp nồi, và nấu khoảng một phút nữa. Bỏ đi những con nghêu chưa mở nắp.</p>
                 <p class="custom-p">•	Ăn với cơm trắng.</p>
 
-            <h2 class="H2" id="6" style="margin-top: 50px;">6. MÌ XÀO TÔM VÀ BÔNG CẢI XANH</h2>
+            <H2 text-green class="H2 text-green" id="6" style="margin-top: 50px;">6. MÌ XÀO TÔM VÀ BÔNG CẢI XANH</H2 text-green>
                 <p class="custom-p">Món ăn này làm khá dễ và nhanh. Tôm tươi và bông cải xanh nổi bật hơn trên đĩa mì xào làm từ gạo. Giá đậu góp phần trang trí trên bề mặt, và trứng sẽ làm cho món ăn ngon và đẹp hơn. Một ít nước cốt chanh sẽ làm sợi mỳ sáng, óng ả.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 10 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 20 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/mixao.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	1 gói 250g mì sợi gạo, ngâm trong nước nóng</p>
                 <p class="custom-p">•	4 muỗng canh dầu thực vật</p>
                 <p class="custom-p">•	250g tôm (loại cỡ trung bình), bóc vỏ, bỏ chỉ lưng</p>
@@ -306,15 +370,66 @@
                 <p class="custom-p">•	1 muỗng canh Hạt nêm Knorr</p>
                 <p class="custom-p">•	Hạt tiêu trắng xay</p>
                 <p class="custom-p">•	Nước ép từ 1/2 quả chanh</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Cho mì vào một tô lớn, rồi cho 1/2 muỗng canh dầu ăn vào, trộn đều. Cho vào tủ lạnh giữ lạnh ít nhất 30 phút.</p>
                 <p class="custom-p">•	Trong một bát nhỏ, trộn đều nước tương đen, nước, và Hạt nêm Knorr.</p>
                 <p class="custom-p">•	Làm nóng chảo ở nhiệt độ trung bình cao, dùng 1,5 muỗng dầu ăn còn lại xào tỏi cho đến khi có mùi thơm. Thêm tôm, xào cho đến khi tôm có màu hồng.</p>
                 <p class="custom-p">•	Dùng ngón tay bung các sợi bún ra trước khi thêm bún vào chảo. Thêm hỗn hợp nước tương. Xào cho đến khi mì được trộn đều.</p>
                 <p class="custom-p">•	Thêm cải ngọt vào và tiếp tục xào cho đến khi mềm. Thêm giá đỗ và xào nhanh tay.</p>
                 <p class="custom-p">•	Gạt mì vào thành chảo để có khoảng trống ở giữa chảo. Đập trứng vào khoảng trống ở trung tâm chảo khuấy cho đến khi chín. Trộn tất cả mọi thứ trong chảo lại với nhau. Nêm với hạt tiêu. Trộn với nước cốt chanh trước khi dùng.</p>
-            <h2 class="H2" id="cauhoi" style="margin-top: 50px;text-align: center;">CÂU HỎI CUỐI CHƯƠNG 1</h2>
-                
+            <H2 text-green class="H2 text-green" id="cauhoi" style="margin-top: 50px;text-align: center;">CÂU HỎI CUỐI CHƯƠNG 1</H2 text-green>
+            <p class="custom-p">
+                <span class="number-ques">Câu hỏi 1:</span><b> "Bún thang"</b> là món ăn đặc sản ở đâu?
+                <div class="div-ques">
+                    <div class="row-ques">
+                        <input type="radio" name="q1">
+                        <label class="true">Hà Nội</label>
+                    </div>
+                    <div class="row-ques">
+                        <input type="radio" name="q1">
+                        <label>Hải Phòng</label>
+                    </div>
+                    <div class="row-ques">
+                        <input type="radio" name="q1">
+                        <label>Nam Định</label>
+                    </div>
+                </div>
+            </p>
+            <p class="custom-p">
+                <span class="number-ques">Câu hỏi 2:</span><b> "Bún thang"</b> là món ăn đặc sản ở đâu?
+                <div class="div-ques">
+                    <div class="row-ques">
+                        <input type="checkbox">
+                        <label class="true">Hà Nội</label>
+                    </div>
+                    <div class="row-ques">
+                        <input type="checkbox">
+                        <label class="true">Hải Phòng</label>
+                    </div>
+                    <div class="row-ques">
+                        <input type="checkbox">
+                        <label>Nam Định</label>
+                    </div>
+                </div>
+            </p>
+            <p class="custom-p">
+                <span class="number-ques">Câu hỏi 1:</span><b> "Bún thang"</b> là món ăn đặc sản ở đâu?
+                <div class="div-ques">
+                    <div class="row-ques">
+                        <input type="radio" name="q3">
+                        <label>Đúng</label>
+                    </div>
+                    <div class="row-ques">
+                        <input type="radio" name="q3">
+                        <label class="true">Sai</label>
+                    </div>
+                </div>
+            </p>
+            <div class="btns-ques">
+                <div class="btn-ques" onclick="onSubmit()">Submit answer</div>
+                <div class="btn-ques" onclick="onDelete()">Delete</div>
+            </div>
+            <script src="./question.js"></script>
 </div>
 </body>
 </html>

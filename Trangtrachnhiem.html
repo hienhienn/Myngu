@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="read.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -146,13 +148,73 @@
                 </a>
             </div>
             </div>
-            <div class="items">
-                <a href="#"><i class="fa-solid fa-expand" style="color: #F47830;"></i></a>
+            <div class="items" style="display: flex;">
+                <a onclick="highlightMode()" id="hlBtn">
+                    <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.5305 21.4446L6.59363 18.3827L5.71033 17.5006V16.1327L12.2958 9.54733L17.1472 14.4L10.5618 20.9854H9.19637L8.26596 20.055L6.87638 21.4446H3.5305ZM13.1573 8.68579L20.5124 1.33188L25.3639 6.18333L18.0087 13.5385L13.1573 8.68579ZM15.9461 1.83333H7.66663V0.625H17.1545L15.9461 1.83333ZM11.8559 5.92354H4.04163V4.71521H13.0642L11.8559 5.92354ZM7.76692 10.0125H0.416626V8.80421H8.97525L7.76692 10.0125Z" fill="#F47920"/>
+                    </svg>
+                </a>
+                <a href="#"><i class="fa-solid fa-expand" style="color: #F47830;" onclick="fullScreen()"></i></a>
                 <a href="#"><i class="fa-regular fa-bookmark" style="color: #F47830;"></i></a>
-                <a href="#"><i class="fa-solid fa-gear" style="color: #F47830;"></i></a>
+                <!-- <a href="#"><i class="fa-solid fa-gear" style="color: #F47830;"></i></a> -->
+                <ul class="nested-dropdowns custom-dropdowns" style="width: 42px;">
+                    <li style="padding: 0; width: fit-content;">
+                        <a href="#"><i class="fa-solid fa-gear topic-color" style="color: #F47830;"></i></a>
+                        <ul>
+                            <li style="display: flex; justify-content: space-between;">
+                                Chế độ
+                                <div class="flex-box">
+                                <div class="rounded-tag" style="width: 50%; background-color: white; border: 1px solid #212121" onclick="setTheme('light')">Sáng</div>
+                                <div class="rounded-tag" style="width: 50%; background-color: #212121; border: 1px solid white; color: white;" onclick="setTheme('dark')">Tối</div>
+                            </div>
+                            </li>
+                            <li style="display: flex; justify-content: space-between;">
+                                Cỡ chữ
+                                <div class="flex-box">
+                                <div class="rounded-tag" style="width: 33%; background-color: #F47830; color: white;" onclick="setFontSize('font-14')">Nhỏ</div>
+                                <div class="rounded-tag" style="width: 33%; background-color: #F47830; color: white;" onclick="setFontSize('font-16')">Vừa</div>
+                                <div class="rounded-tag" style="width: 33%; background-color: #F47830; color: white;" onclick="setFontSize('font-20')">Lớn</div>
+                            </div>
+                            </li>
+                            <li style=" padding: 8px 0;">
+                                <div style="padding: 0 20px; background-color: white;">Phông chữ</div>
+                                <div class="select-font" id="inter" onclick="setFontFamily('inter')">
+                                    Mặc định
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+                                </div>
+                                <div class="select-font" id="time" style="font-family: 'Times New Roman', Times, serif;" onclick="setFontFamily('time')">
+                                    Time New Roman
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+
+                                </div>
+                                <div class="select-font" id="noto" style="font-family: 'Noto Sans', Times, serif;" onclick="setFontFamily('noto')">
+                                    Noto Sans
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+
+                                </div>
+                                <div class="select-font" id="bitter" style="font-family: 'Bitter', Times, serif;" 
+                                onclick="setFontFamily('bitter')">
+                                    Bitter
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="reading-frame">
+            <div class="arrow-btns">
+                <button onclick="topFunction()" class="ar-btn" id="myBtn" title="Go to top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button onclick="bottomFunction()" class="ar-btn" id="myBtn2" title="Go to bottom">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </button>
+            </div>
+            <script src="./script.js"></script>
+
                 <p class="trangtrachnhiem">Không phần nào trong xuất bản phẩm này được phép sao chép hay phát hành dưới bất kỳ hình thức hoặc phương tiện nào nếu không được phép của Công ty cổ phần sách Alpha Book</span></p>
                 <hr/>
                 <div class="trangtrachnhiem">

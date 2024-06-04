@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="read.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -146,21 +148,82 @@
                 </a>
             </div>
             </div>
-            <div class="items">
-                <a href="#"><i class="fa-solid fa-expand" style="color: #F47830;"></i></a>
+            <div class="items" style="display: flex;">
+                <a onclick="highlightMode()" id="hlBtn">
+                    <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.5305 21.4446L6.59363 18.3827L5.71033 17.5006V16.1327L12.2958 9.54733L17.1472 14.4L10.5618 20.9854H9.19637L8.26596 20.055L6.87638 21.4446H3.5305ZM13.1573 8.68579L20.5124 1.33188L25.3639 6.18333L18.0087 13.5385L13.1573 8.68579ZM15.9461 1.83333H7.66663V0.625H17.1545L15.9461 1.83333ZM11.8559 5.92354H4.04163V4.71521H13.0642L11.8559 5.92354ZM7.76692 10.0125H0.416626V8.80421H8.97525L7.76692 10.0125Z" fill="#F47920"/>
+                    </svg>
+                </a>
+                <a href="#"><i class="fa-solid fa-expand" style="color: #F47830;" onclick="fullScreen()"></i></a>
                 <a href="#"><i class="fa-regular fa-bookmark" style="color: #F47830;"></i></a>
-                <a href="#"><i class="fa-solid fa-gear" style="color: #F47830;"></i></a>
+                <!-- <a href="#"><i class="fa-solid fa-gear" style="color: #F47830;"></i></a> -->
+                <ul class="nested-dropdowns custom-dropdowns" style="width: 42px;">
+                    <li style="padding: 0; width: fit-content;">
+                        <a href="#"><i class="fa-solid fa-gear topic-color" style="color: #F47830;"></i></a>
+                        <ul>
+                            <li style="display: flex; justify-content: space-between;">
+                                Chế độ
+                                <div class="flex-box">
+                                <div class="rounded-tag" style="width: 50%; background-color: white; border: 1px solid #212121" onclick="setTheme('light')">Sáng</div>
+                                <div class="rounded-tag" style="width: 50%; background-color: #212121; border: 1px solid white; color: white;" onclick="setTheme('dark')">Tối</div>
+                            </div>
+                            </li>
+                            <li style="display: flex; justify-content: space-between;">
+                                Cỡ chữ
+                                <div class="flex-box">
+                                <div class="rounded-tag" style="width: 33%; background-color: #F47830; color: white;" onclick="setFontSize('font-14')">Nhỏ</div>
+                                <div class="rounded-tag" style="width: 33%; background-color: #F47830; color: white;" onclick="setFontSize('font-16')">Vừa</div>
+                                <div class="rounded-tag" style="width: 33%; background-color: #F47830; color: white;" onclick="setFontSize('font-20')">Lớn</div>
+                            </div>
+                            </li>
+                            <li style=" padding: 8px 0;">
+                                <div style="padding: 0 20px; background-color: white;">Phông chữ</div>
+                                <div class="select-font" id="inter" onclick="setFontFamily('inter')">
+                                    Mặc định
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+                                </div>
+                                <div class="select-font" id="time" style="font-family: 'Times New Roman', Times, serif;" onclick="setFontFamily('time')">
+                                    Time New Roman
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+
+                                </div>
+                                <div class="select-font" id="noto" style="font-family: 'Noto Sans', Times, serif;" onclick="setFontFamily('noto')">
+                                    Noto Sans
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+
+                                </div>
+                                <div class="select-font" id="bitter" style="font-family: 'Bitter', Times, serif;" 
+                                onclick="setFontFamily('bitter')">
+                                    Bitter
+                                    <i class="fa-solid fa-circle-check fa-2xs icon" ></i>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
             </div>
         </div>
           <div class="reading-frame">
+            <div class="arrow-btns">
+                <button onclick="topFunction()" class="ar-btn" id="myBtn" title="Go to top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button onclick="bottomFunction()" class="ar-btn" id="myBtn2" title="Go to bottom">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </button>
+            </div>
+            <script src="./script.js"></script>
+
             <h1 class="H1">CHƯƠNG 2: MÓN TẾT</h1>
-            <h2 class="H2" id="1">1. BÁNH TÉT LÁ CẨM</h2>
+            <H2 text-green class="H2 text-green" id="1">1. BÁNH TÉT LÁ CẨM</H2 text-green>
                 <p class="custom-p">Là một loại bánh truyền thống nổi tiếng của người miền Tây, <span class="custom-p2">“Bánh Tét Lá Cẩm”</span> được dùng chủ yếu trong các dịp lễ tết quan trọng bởi màu sắc đẹp, trang nhã, thích hợp cho những lời chúc phúc, cầu may đầu năm.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 8 tiếng</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 5 tiếng</p>
                 <p class="custom-p"><span class="custom-p3">Thành phẩm:</span> 2 đòn bánh</p>
                 <img src="assets/banhtet.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	250g đậu xanh </p>
                 <p class="custom-p">•	250g thịt ba rọi, rửa sạch, xắt sợi như ngón tay cái </p>
                 <p class="custom-p">•	10 cái lòng đỏ trứng muối, cắt làm 4 </p>
@@ -168,19 +231,19 @@
                 <p class="custom-p">•	500g dừa nạo </p>
                 <p class="custom-p">•	Lá chuối hột, dây lát, muối, hạt nêm, đường, nước hành tỏi, hành lá</p> 
                 <p class="custom-p">•	1kg nếp ngỗng</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Nấu lá cẩm lọc lấy 1 chén nước cốt. Ngâm nếp 6 giờ với nước lá cẩm, vớt để ráo. Dừa nhồi vắt lấy 1 chén nước cốt, 2 chén nước dảo. Cho nước dảo và nếp vào xào liên tục với lửa nhỏ, nêm 2 thìa cà phê muối, 1 thìa súp đường, rót từ từ nước cốt dừa vào đến khi nếp chín 80%, để nguội chia 5 phần.  </p>
                 <p class="custom-p">•	Đậu xanh ngâm nở nấu với nước dảo dừa và 1 thìa cà phê muối, đánh nhuyễn. Phi thơm hành lá, cho đậu xanh vào xào ráo, tắt bếp để nguội, chia 5 phần. Thịt ướp với 1 thìa súp đường, 1 thìa cà phê hạt nêm, 1 thìa súp nước hành tỏi, để 3-4 giờ. Lấy đậu xanh bọc thịt và lòng đỏ trứng muối cho kín thành hình trụ.  </p>
                 <p class="custom-p">•	Xé lá chuối 30cm, lá dọc ở ngoài, bề láng quay ra, lá ngang ở trong. Trải mỏng nếp ra giữa lá, đặt nhân vào theo chiều dọc, gấp mí lá vào, cuộn tròn, gấp hai đầu lá tạo hình vuông. Dùng hai miếng lá chuối đặt góc vuông. Túm đầu đòn bánh lại, cột dây lát ở giữa và dọc theo đòn bánh, chia thành khoảng đều nhau, dùng dây lát cột vòng quanh, siết chặt.  </p>
                 <p class="custom-p">•	Lót lá chuối xuống đáy nồi, đổ 2/3 nước vào cùng lá dứa, đun sôi, thả bánh vào nấu khoảng 5 tiếng cho chín.</p>
             
-            <h2 class="H2" id="2" style="margin-top: 50px;">2. BÁNH CHƯNG NHÂN HẢI SẢN</h2>
+            <H2 text-green class="H2 text-green" id="2" style="margin-top: 50px;">2. BÁNH CHƯNG NHÂN HẢI SẢN</H2 text-green>
                 <p class="custom-p">Nhắc tới Tết không thể thiếu bánh chưng, món ăn truyền thống và được yêu thích của nhiều người. Thay vì nhân thịt heo đỗ xanh như truyền thống, cùng thay đổi khẩu vị khi gói bằng các loại hải sản, tạo nên hương vị mới, thú vị khi thưởng thức.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 5 tiếng</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 10 tiếng</p>
                 <p class="custom-p"><span class="custom-p3">Thành phẩm:</span> 2 bánh 20cmx20cm</p>
                 <img src="assets/banhchung.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	1kg nếp bắc hay nếp ngỗng</p> 
                 <p class="custom-p">•	500g đậu xanh đãi sạch vỏ</p> 
                 <p class="custom-p">•	200g tôm</p> 
@@ -189,7 +252,7 @@
                 <p class="custom-p">•	200g thịt ba chỉ</p> 
                 <p class="custom-p">•	1 thìa súp hạt nêm, 2 thìa cà phê tiêu, 1 thìa cà phê đường, 3 thìa súp dầu ăn</p> 
                 <p class="custom-p">•	1 thìa súp hành băm, 8 lá dong lớn, 10 lá dong nhỏ, 12 dây lạt tre, 1 khuôn bánh chưng 20cmx20cm</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Nếp vo sạch, ngâm khoảng 4 tiếng, vớt ra để thật ráo rồi trộn với 1 thìa cà phê muối. Đậu xanh rửa sạch, ngâm khoảng 1 tiếng, hấp chín, xay nhuyễn. Trộn đậu với hạt nêm, tiêu, vắt miếng, ép dẹp thành hình vuông.</p>
                 <p class="custom-p">•	Thịt heo quay cắt miếng dài</p>
                 <p class="custom-p">•	Lá dong lau sạch, tước bỏ sống lá, cắt bỏ gốc lá và đầu lá, gấp đôi theo chiều dọc, sau đó gấp đôi theo chiều ngang. Xếp 2 sợi lạt thành hình chữ thập, cho khuôn lên. Đặt lá vào 1 bên cạnh khuôn, mở lá ra theo chiều dọc, cho mép lá kia sát cạnh khuôn cùng bên để tạo góc vuông, Phần mép lá nằm phía dưới thì bẻ mép 2 cạnh lá lại, tạo thành hình tam giác dưới đáy. Dùng 1 lá khác lặp lại như vậy với góc đối diện, thêm 2 lá cho vào hai góc còn lại (không bẻ mép lá thành hình tam giác mà mở ra để tạo thành đáy). Lót thêm 1 lá vào khuôn, cho nếp, đậu, thịt quay lên lá, trên cùng là lớp nếp, sau đó dùng 1 lá đậy lên. Xếp các mép lá thừa lại cho gọn, xếp 2 bên rồi xếp lại lần nữa. Lấy khuôn ra khỏi bánh, cột 3 lạt ngang, 3 lạt dọc.</p>
@@ -198,31 +261,31 @@
                 <p class="custom-p">•	Canh châm nước luôn ngập bánh, luộc khoảng 10 tiếng là chín.</p>
                 <p class="custom-p">•	Vớt bánh ra, rửa bằng nước lạnh cho sạch, dùng vật nặng đè lên bánh khoảng 2 tiếng, treo vào nơi thoáng mát.</p>
 
-            <h2 class="H2" id="3" style="margin-top: 50px;">3. GIÒ GÀ</h2>
+            <H2 text-green class="H2 text-green" id="3" style="margin-top: 50px;">3. GIÒ GÀ</H2 text-green>
                 <p class="custom-p">Được biến tấu từ món giò heo, rất nhiều nguyên liệu như bò, gà được dùng làm giò ngày Tết. Nhiều người thích gói giò gà vì không cần quá cầu kỳ, tỉ mẩn mà ngày xuân vẫn có khúc giò ngon đãi khách.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 1 tiếng</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 45 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thành phẩm:</span> 1 cây</p>
                 <img src="assets/gioga.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	1kg ức gà</p>
                 <p class="custom-p">•	500g giò sống</p>
                 <p class="custom-p">•	2 thìa súp Nước mắm chấm Knorr</p>
                 <p class="custom-p">•	2 thìa súp Hạt nêm Knorr</p>
                 <p class="custom-p">•	1 thìa súp tiêu hạt</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Ức gà rửa sạch, dùng khăn sạch thấm thật ráo nước. Lấy 800g cho vào cối xay nhỏ (hoặc băm nhuyễn), 200g còn lại thái lát.</p>
                 <p class="custom-p">•	Cho gà xay nhỏ vào cối, dùng chày quết đều, khi quết thường xuyên nhúng chày vào nước mắm. Cho tiếp giò lụa, Hạt nêm Knorr, và tiêu sọ vào, quết đều cho hỗn hợp thật dai. Sau cùng cho ức gà thái lát vào trộn đều.</p>
                 <p class="custom-p">•	Lấy bọc nilon cột phần đáy, cho hỗn hợp giò đã quết vào, buộc chặt đầu bao lại. Cho vào nồi hấp cách thủy khoảng 45 phút là được.</p>
                 <p class="custom-p">•	Vớt ra để nguội, cho vào tủ lạnh dùng dần.</p>
 
-            <h2 class="H2" id="4" style="margin-top: 50px;">4. TÔM KHO TRỨNG CÚT</h2>
+            <H2 text-green class="H2 text-green" id="4" style="margin-top: 50px;">4. TÔM KHO TRỨNG CÚT</H2 text-green>
                 <p class="custom-p">Tôm là loại hải sản sẵn có ở tất cả các khu chợ từ thành thị tới nông thôn, món <span class="custom-p2">“Tôm Kho Trứng Cút”</span> cũng vì vậy mà được nhiều người yêu thích. Mâm cơm ngày Tết thêm món tôm kho thì còn gì thú vị hơn.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 20 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 30 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/tomkho.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	1kg tôm sú (loại lớn)</p>
                 <p class="custom-p">•	30 quả trứng cút</p>
                 <p class="custom-p">•	2 trái dừa xiêm</p>
@@ -231,18 +294,18 @@
                 <p class="custom-p">•	2 thìa súp Nước mắm chấm Knorr</p>
                 <p class="custom-p">•	1/2 thìa súp Hạt nêm Knorr</p>
                 <p class="custom-p">•	1 thìa súp tỏi băm, 4 thìa súp dầu ăn</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>
                 <p class="custom-p">•	Tôm sú rửa sạch, cắt râu và chân, bóc vỏ. Trứng cút luộc chín, ngâm nước lạnh, bóc vỏ.</p>
                 <p class="custom-p">•	Phi thơm hành tím, tỏi băm với dầu ăn, thả tôm vào chiên chin 2 mặt. Cho nước dùng và trứng cút vào nấu sôi, nêm Hạt nêm Knorr, đường, nước mắm, muối vào vừa ăn. Nấu đến khi nước sánh trong là được.</p>
                 <p class="custom-p">•	Cho tôm kho trứng cút vào tủ mát, khi ăn múc lượng vừa đủ hâm nóng lại. Dùng kèm với rau cần muối chua rất ngon.</p>
         
-            <h2 class="H2" id="5" style="margin-top: 50px;">5. BÒ THƯNG</h2>
+            <H2 text-green class="H2 text-green" id="5" style="margin-top: 50px;">5. BÒ THƯNG</H2 text-green>
                 <p class="custom-p">Những dịp lễ, Tết đặc biệt, ngoài các món ăn quen thuộc như nem, chạo, chả… người dân miền Trung còn sáng tạo ra món <span class="custom-p2">“Bò Thưng”</span> lạ miệng, đậm đà, quyến rũ biết bao người mê ẩm thực.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 25 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/bothung.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	500g thịt thăn bò 
                 <p class="custom-p">•	200g mỡ gáy 
                 <p class="custom-p">•	200g đậu phộng rang 
@@ -253,7 +316,7 @@
                 <p class="custom-p">•	1 thìa súp hành tím và tỏi băm
                 <p class="custom-p">•	4 thìa súp dầu ăn 
                 <p class="custom-p">•	Dây chỉ cột thịt</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Đậu phộng rang đập giập, chia làm 2, một phần để cho vào nồi thưng, một phần để rắc lên đĩa trước khi ăn.</p>   
                 <p class="custom-p">•	Thịt bò cắt miếng dày, đập giập thật mềm.</p>   
                 <p class="custom-p">•	Mỡ gáy cắt sợi dài bằng miếng bò, cho đường vào ướp cứng trong. </p>  
@@ -261,33 +324,33 @@
                 <p class="custom-p">•	Phi thơm tỏi và hành tím, cho bò cuộn vào chiên vừa chín. Cho nước dừa vào nấu sôi, nêm Nước mắm chấm Knorr, Hạt nêm Knorr, đường và đậu phộng đập giập vào thưng đến khi cuốn bò mềm là được.</p>   
                 <p class="custom-p">•	Để thịt nguội, thái miếng mỏng, rắc đậu phộng, chan nước xốt lên trên dùng kèm với khế, chuối chát và bánh mì rất ngon.</p>
 
-            <h2 class="H2" id="6" style="margin-top: 50px;">6. GIÒ LỤA CUỘN THỊT XÔNG KHÓI</h2>
+            <H2 text-green class="H2 text-green" id="6" style="margin-top: 50px;">6. GIÒ LỤA CUỘN THỊT XÔNG KHÓI</H2 text-green>
                 <p class="custom-p">Từ những nguyên liệu được làm sẵn trước như giò lụa, thịt xông khói... chị em nội trợ có thể vận dụng một chút khéo léo của mình để chế biến thêm nhiều món ăn mới lạ, mang đến cho cả nhà những bữa cơm hấp dẫn.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 5 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/gioluacuonthitxongkhoi.jpg" width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	1 gói thịt xông khói</p>
                 <p class="custom-p">•	200g giò lụa</p>
                 <p class="custom-p">•	3 thìa cà phê Hạt nêm Knorr</p>
                 <p class="custom-p">•	1 thìa cà phê đường</p>
                 <p class="custom-p">•	20g bơ lạt</p>
                 <p class="custom-p">•	2 thìa súp tỏi băm</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Thịt xông khói cắt miếng dài 6cm. Giò lụa cắt khối dài 3cm, dày khoảng 1cm. Trải thịt ra thớt, đặt miếng giò lụa lên cuộn lại, dùng tăm xiên qua cho khỏi bung.</p>
                 <p class="custom-p">•	Làm tan bơ, cho tỏi băm vào phi thơm. Bật lửa lớn, cho giò lụa cuộn thịt ba rọi xông khói vào xóc, nêm đường, Hạt nêm Knorr vừa ăn, xóc lần nữa cho đều rồi tắt bếp.</p>
                 <p class="custom-p">•	Bày ra đĩa, trang trí xà lách và dưa kiệu để ăn kèm. Chấm tương ớt rất ngon.</p>
             
-            <h2 class="H2" id="7">7. CANH BÓNG NẤU THẢ</h2>
-                <video src="assets/Món ngon ngày Tết cùng Knorr  Canh bóng  Đặc sản miền Bắc.mp4" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></video>
+            <H2 text-green class="H2 text-green" id="7">7. CANH BÓNG NẤU THẢ</H2 text-green>
+                <video src="assets/Món ngon ngày Tết cùng Knorr  Canh bóng  Đặc sản miền Bắc.mp4" controls width="60%" class="video-custom"></video>
                 <audio src="assets/canhbong.mp3" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></audio>
                 <p class="custom-p">Là món ăn truyền thống, có trong mâm cỗ cúng gia tiên ngày Tết. Món ăn thanh mát, cần chế biến tỉ mỉ cầu kì; và được gọi là <span class="custom-p2">“Canh bóng”</span> vì thành phần quan trọng nhất là bóng làm từ bì heo, nướng lên cho nở phồng, thả trên bát canh trông như những chiếc bong bóng. Canh này thường dùng các loại rau như cà rốt, xu hào, nấm...</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 20 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 30 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/canhbong.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	1 miếng bóng bì lớn</p>
                 <p class="custom-p">•	200g giò sống</p>
                 <p class="custom-p">•	100g tôm bóc vỏ, bỏ chỉ lưng, cắt hạt lựu</p>
@@ -298,7 +361,7 @@
                 <p class="custom-p">•	1 củ su hào</p>
                 <p class="custom-p">•	10 cọng hành lá</p>
                 <p class="custom-p">•	10g rau răm</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Bóng bì ngâm nước mềm, vớt để ráo, cắt miếng vuông 10x10cm.</p>
                 <p class="custom-p">•	Tôm bóc vỏ, bỏ chỉ lưng, mực rửa sạch. Tất cả cắt hạt lựu.</p>
                 <p class="custom-p">•	Nấm mèo ngâm nước, cắt bỏ chân, rửa sạch, thái sợi mỏng.</p>
@@ -307,13 +370,13 @@
                 <p class="custom-p">•	Nấu nước sôi, nêm hạt nêm, nước mắm vừa ăn, cho cà rốt, su hào và nấm hương vào nấu khoảng 20 phút. Cho tiếp bóng bì cuộn thái lát vào nấu trên lửa nhỏ khoảng 10 phút là được.</p>
                 <p class="custom-p">•	Múc ra tô, rắc hành lá, rau răm, tiêu và ít nước mắm sống lên trên. Dùng như món súp hay dùng kèm với cơm nóng đều ngon.</p>
 
-            <h2 class="H2" id="8" style="margin-top: 50px;">8. BÓNG XÀO THẬP CẨM</h2>
+            <H2 text-green class="H2 text-green" id="8" style="margin-top: 50px;">8. BÓNG XÀO THẬP CẨM</H2 text-green>
                 <p class="custom-p">Món ăn không chỉ thể hiện được sự khéo léo của người nấu mà còn cuốn hút người ăn nhờ màu sắc rực rỡ, tươi sáng và mùi vị rất đặc biệt. Cái sần sật của da heo, vị bùi bùi từ tôm, mực càng thú vị hơn khi được kết hợp cùng nhiều loại rau, củ đi kèm.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 20 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 20 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/bongxao.jpg" width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	100g bóng heo </p>
                 <p class="custom-p">•	50g tim heo </p>
                 <p class="custom-p">•	50g mực </p>
@@ -325,76 +388,76 @@
                 <p class="custom-p">•	1/2 củ hành tây </p>
                 <p class="custom-p">•	1 nhánh gừng  </p>
                 <p class="custom-p">•	1 thìa súp hành tỏi băm, 1 thìa cà phê muối, 1 thìa súp Hạt nêm Knorr, 1/2 thìa súp đường, 2 thìa súp dầu ăn</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Da heo ngâm nước cho mềm, bóp với nước pha gừng và rượu cho hết mùi, xả sạch, vắt khô, tháí miếng vuông.  </p>
                 <p class="custom-p">•	Tim heo rửa sạch, thái lát mỏng. Mực làm sạch, khía hoa, thái miếng vừa ăn. Tôm lột vỏ, rửa sạch, để ráo.  </p>
                 <p class="custom-p">•	Bông cải tách bông nhỏ. Cà rốt bào vỏ, tỉa hoa, thái mỏng. Đậu que tước xơ, thái khúc. Gừng cạo vỏ, đập giập, cho vào nước nấu sôi, nêm ít muối, hạt nêm, cho bông cải, cà rốt, đậu que vào trụng sơ, vớt ra để ráo, ngâm nước đá lạnh cho giòn. Cho tiếp mực vào nước luộc, trụng sơ, xả lại nước lạnh.  </p>
                 <p class="custom-p">•	Làm nóng dầu ăn, phi vàng 1/2 hành tỏi băm, cho tim heo vào xào chín, nêm ít hạt nêm, trút ra đĩa. Dùng lại chảo, thêm dầu ăn vào, cho mực, tôm vào xào chín, nêm hạt nêm vừa ăn.  </p>
                 <p class="custom-p">•	Phi thơm 1/2 hành tím băm còn lại với dầu ăn trên chảo khác, cho bông cải, cà rốt, đậu que vào xào nhanh tay, nêm đường, hạt nêm vừa ăn. Khi rau củ vừa chín tới cho tim, mực, tôm, bóng heo vào đảo đều, nêm lại vừa ăn. Xào chín tắt bếp, rắc tiêu lên.</p>
 
-            <h2 class="H2" id="9">9. THỊT ĐÔNG</h2>
-                <video src="assets/Món ngon ngày Tết cùng Knorr  Thịt đông  Đặc sản miền Bắc.mp4" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></video>
+            <H2 text-green class="H2 text-green" id="9">9. THỊT ĐÔNG</H2 text-green>
+                <video src="assets/Món ngon ngày Tết cùng Knorr  Thịt đông  Đặc sản miền Bắc.mp4" controls width="60%" class="video-custom"></video>
                 <audio src="assets/thitdong.mp3" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></audio>
                 <p class="custom-p">Đi kèm với đĩa cải chua, dưa hành, củ kiệu ngày Tết của người Việt thường là món <span class="custom-p2">“Thịt đông”</span> rất đặc biệt và ngon miệng. Nhờ cái lạnh của khí trời những ngày vào đông, mà đĩa thịt đông càng trở nên hấp dẫn và lôi cuốn người thưởng thức hơn.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 20 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 60 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/thitdong.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	1kg chân giò heo rút xương</p>
                 <p class="custom-p">•	300g thịt đầu heo</p>
                 <p class="custom-p">•	50g nấm mèo</p>
                 <p class="custom-p">•	1 thìa cà phê tiêu đập giập</p>
                 <p class="custom-p">•	2 thìa cà phê Hạt nêm Knorr</p>
                 <p class="custom-p">•	1 thìa cà phê đường, 2 thìa súp Nước mắm chấm Knorr, 2 lít nước</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Chân giò, thịt đầu cạo lông, cho vào nước muối rửa sạch, để ráo, cắt miếng dày khoảng 1cm. Nấm mèo ngâm nở, cắt bỏ chân, thái sợi to.</p>
                 <p class="custom-p">•	Nấu nước vừa nổi bọt lăn tăn, nêm Nước mắm chấm Knorr, Hạt nêm Knorr, đường, tiêu (nêm đậm hơn luộc nhưng nhạt hơn kho) rồi cho thịt vào nồi.</p>
                 <p class="custom-p">•	Nấu đến khi thịt mềm và nước sánh lại là được. Cho nấm mèo vào, tắt bếp.</p>
                 <p class="custom-p">•	Múc thịt vào bát hoặc vào hộp nhựa tròn. Chờ thịt đông lại cho vào tủ mát dùng dần. Ăn kèm với dưa cần hoặc cải chua, chấm nước mắm sống pha ớt rất ngon.</p>
 
-            <h2 class="H2" id="10" style="margin-top: 50px;">10. THỊT BÒ VIÊN XÀO NẤM KIM CHÂM </h2>
+            <H2 text-green class="H2 text-green" id="10" style="margin-top: 50px;">10. THỊT BÒ VIÊN XÀO NẤM KIM CHÂM </H2 text-green>
                 <p class="custom-p">Ngoài thành phần protid như mọi loại nấm khác, nấm kim châm còn có vitamin B1, B2, C, BB... chứa kẽm, kali, tốt cho người mắc bệnh huyết áp; đồng thời có tác dụng phòng chống bệnh gan mật, tiêu hóa. Nấm kim châm chế biến đơn giản, lại có thể phối hợp với nhiều loại thực phẩm như xào với mực, tôm, thịt, thịt gà, thịt bò... Bạn có thể thử chế biến <span class="custom-p2">“Thịt Bò Viên Xào Với Nấm Kim Châm”</span>, một món dễ làm, không tốn thời gian.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/boviennamkimcham.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	200g thịt bò 
                 <p class="custom-p">•	150g nấm kim châm 
                 <p class="custom-p">•	100g cà rốt 
                 <p class="custom-p">•	50g củ năng 
                 <p class="custom-p">•	10g tỏi băm 
                 <p class="custom-p">•	2 thìa cà phê Hạt nêm Knorr, 1 thìa súp dầu ăn</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Thịt bò rửa sạch, băm nhuyễn, cho 1 thìa cà phê Hạt nêm Knorr vào trộn đều, để thấm. 
                 <p class="custom-p">•	Vo thịt thành viên tròn.  
                 <p class="custom-p">•	Nấm kim châm cắt bỏ gốc, rửa sạch, để ráo. Cà rốt, củ năng gọt vỏ, rửa sạch. Cà rốt thái sợi, củ năng thái đôi.  
                 <p class="custom-p">•	Làm nóng 1 thìa súp dầu ăn, cho tỏi vào phi thơm, cho thịt bò vào đảo nhẹ tay cho chín. Cho tiếp cà rốt và củ năng vào xào trước, sau đó cho nấm kim châm vào, nêm Hạt nêm Knorr vừa ăn, xào nhanh khoảng 5 phút nữa là được. </p>
 
-            <h2 class="H2" id="11" style="margin-top: 50px;">11. ĐỌT BÍ XÀO THỊT BÒ CHAY </h2>
+            <H2 text-green class="H2 text-green" id="11" style="margin-top: 50px;">11. ĐỌT BÍ XÀO THỊT BÒ CHAY </H2 text-green>
                 <p class="custom-p"><span class="custom-p2">“Thịt bò chay xào đọt bí”</span> là món ngon hấp dẫn phù hợp với những ngày thời tiết se lạnh. Món ăn được chế biến dễ dàng lại rất nhanh. Vậy tại sao lại không trổ tài cho mọi người cùng thưởng thức nhỉ?</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 2 người</p>
                 <img src="assets/dotbi.png"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	10 miếng thịt bò chay
                 <p class="custom-p">•	2 tép tỏi
                 <p class="custom-p">•	2 thìa cà phê nước mắm chay
                 <p class="custom-p">•	2 thìa cà phê Hạt nêm Knorr từ Nấm và Rong Biển, 1 thìa súp dầu ăn</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Thịt bò chay ngâm với nước để mềm, vắt khô, cắt miếng vừa ăn.  
                 <p class="custom-p">•	Đọt bí tước bỏ phần vỏ bên ngoài, rửa sạch, để ráo nước. Tỏi đập giập, băm nhỏ.  
                 <p class="custom-p">•	Làm nóng chảo, cho dầu ăn vào phi thơm tỏi, cho đọt bí vào xào. Khi rau gần chín, cho thịt bò chay vào xào chung. Nêm nếm nước mắm chay, Hạt nêm Knorr từ Nấm và Rong Biển cho vừa ăn.  
                 <p class="custom-p">•	Cho rau xào ra dĩa ăn với cơm trắng.</p>    
 
-            <h2 class="H2" id="12" style="margin-top: 50px;">12. CÁ HÚ KHO RIỀNG</h2>
+            <H2 text-green class="H2 text-green" id="12" style="margin-top: 50px;">12. CÁ HÚ KHO RIỀNG</H2 text-green>
                 <p class="custom-p">Cá hú có thịt ngon, tuy giữ vị trí khiêm tốn sau hai loài cá tra và cá basa, nhưng vẫn mang một hương vị rất hấp dẫn trong món ăn hàng ngày. Cá hú tươi kho với riềng sẽ làm bữa cơm nhà bạn thêm bổ dưỡng.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 20 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 30 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/cahukhorieng.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	300g cá hú 
                 <p class="custom-p">•	100g thịt ba chỉ 
                 <p class="custom-p">•	1/2 củ riềng tươi 
@@ -404,19 +467,19 @@
                 <p class="custom-p">•	Ớt xay 
                 <p class="custom-p">•	1 gói Knorr Gia Vị Hoàn Chỉnh - Cá Kho Riềng 
                 <p class="custom-p">•	Gia vị: Hạt nêm Knorr, muối, dầu ăn</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Cá hú rửa sạch, cắt khoanh, ướp cá với nước màu dừa, 1 gói Knorr Gia Vị Hoàn Chỉnh  
                 <p class="custom-p">•	Cá Kho Riềng, để thấm 15 phút.  
                 <p class="custom-p">•	Thịt rửa sạch, xắt miếng mỏng. Riềng xắt sợi. Ớt xắt lát.  
                 <p class="custom-p">•	Làm nóng dầu ăn, cho thịt vào xào săn, cho cá đã ướp vào, nhẹ tay trở mặt cá, cho riềng và ớt vào, thêm ít nước lọc cho xăm xắp mặt cá, kho lửa nhỏ cho cá ngấm gia vị, khi thấy nước sệt lại là được.</p>
 
-            <h2 class="H2" id="13" style="margin-top: 50px;">13. GIÒ LỢN NINH SẢ TỎI</h2>
+            <H2 text-green class="H2 text-green" id="13" style="margin-top: 50px;">13. GIÒ LỢN NINH SẢ TỎI</H2 text-green>
                 <p class="custom-p">Với những phụ nữ Việt, món chân giò ninh luôn có trong thực đơn ngày Tết. Hương thơm nồng của sả gia giảm thật khéo với vị đậm đà của thịt heo, giúp món ăn ngon mà không ngấy, thuyết phục những thực khách khó tính nhất.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 45 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/giolonninh.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	1 cái chân giò lợn
                 <p class="custom-p">•	100g tỏi củ
                 <p class="custom-p">•	10 cây sả
@@ -425,21 +488,21 @@
                 <p class="custom-p">•	2 thìa cà phê Hạt nêm Knorr từ Thịt Thăn, Xương Ống và Tủy
                 <p class="custom-p">•	1 thìa súp Nước mắm chấm Knorr
                 <p class="custom-p">•	2 thìa cà phê đường</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Chân giò cạo sạch lông, rửa sạch bằng nước muối, chặt miếng vừa ăn.
                 <p class="custom-p">•	Tỏi để nguyên vỏ, rửa sạch. Sả bóc vỏ già, rửa sạch chẻ làm đôi, cắt khúc vừa ăn.
                 <p class="custom-p">•	Cho sả và tỏi vào nồi cùng với chân giò, bắc lên bếp tao cho thịt săn lại, cho nước dừa vào hầm, nêm Hạt nêm Knorr từ Thịt Thăn, Xương Ống và Tủy, Nước mắm chấm Knorr, muối, đường vừa ăn. Hầm khoảng 45 phút cho chân giò mềm là được.
                 <p class="custom-p">•	Để nguội chia ra từng phần cho vào tủ mát. Khi ăn lấy từng phần ra hâm lại rất ngon.</p>
 
-            <h2 class="H2" id="14" style="margin-top: 50px;">14. BA RỌI KHO TIÊU </h2>
-                <video src="assets/Cách Nấu Thịt Kho Tàu  Braised Pork With Eggs.mp4" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></video>
+            <H2 text-green class="H2 text-green" id="14" style="margin-top: 50px;">14. BA RỌI KHO TIÊU </H2 text-green>
+                <video src="assets/Cách Nấu Thịt Kho Tàu  Braised Pork With Eggs.mp4" controls width="60%" class="video-custom"></video>
                 <audio src="assets/baroikhotieu.mp3" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></audio>
                 <p class="custom-p"><span class="custom-p2">“Ba rọi kho tiêu”</span>,là một món ăn cực kì hấp dẫn với miếng thịt ba rọi mềm, có màu cánh gián đẹp, thơm thơm mùi hạt tiêu. Món này sẽ mang đến một bữa ăn rất ấm cúng và ngon miệng khi dùng với cơm nóng trong mùa lạnh.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/baroikhotieu.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	300g thịt ba rọi, ít mỡ, cắt que  
                 <p class="custom-p">•	3 tép tỏi, bằm nhuyễn  
                 <p class="custom-p">•	1/4 trái ớt sừng, cắt miếng mỏng  
@@ -448,35 +511,35 @@
                 <p class="custom-p">•	1/4 muỗng cà phê tiêu xay 
                 <p class="custom-p">•	2 muỗng canh dầu ăn 
                 <p class="custom-p">•	2/3 chén nước lọc</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Ướp thịt ba rọi với tỏi bằm và gói Knorr Gia Vị Hoàn Chỉnh  
                 <p class="custom-p">•	Thịt Kho, để 15 phút cho thịt thấm gia vị.  
                 <p class="custom-p">•	Đun nóng dầu ăn, cho hỗn hợp thịt vào nồi, xào khoảng 5 phút cho thịt săn lại.  
                 <p class="custom-p">•	Cho nước lọc vào nồi, giảm lửa nhỏ, kho khoảng 10 phút hoặc đến khi nước sốt sệt lại là được, cho hành lá vào. Múc thịt ra đĩa, thêm chút tiêu xay cho thơm, trang trí với ớt cắt khoanh, dùng nóng với cơm trắng. </p>
 
-            <h2 class="H2" id="15" style="margin-top: 50px;">15. CÁ KHO RIỀNG</h2>
-                <video src="assets/Cách Nấu Cá Kho Riềng  Món Ngon Knorr Hàng Ngày.mp4" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></video>
+            <H2 text-green class="H2 text-green" id="15" style="margin-top: 50px;">15. CÁ KHO RIỀNG</H2 text-green>
+                <video src="assets/Cách Nấu Cá Kho Riềng  Món Ngon Knorr Hàng Ngày.mp4" controls width="60%" class="video-custom"></video>
                 <audio src="assets/cahukhorieng.jpg" controls width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px"></audio>
                 <p class="custom-p"><span class="custom-p2">“Cá kho riềng”</span>là sự kết hợp giữa vị mặn, bùi của cá cùng vị béo của thịt, thơm của riềng tạo sẽ tạo nên hương vị riêng biệt của món cá kho thường được nấu ở phía Bắc.</p>
                 <p class="custom-p"><span class="custom-p3">Chuẩn bị:</span> 15 phút</p>
                 <p class="custom-p"><span class="custom-p3">Thực hiện:</span> 25 phút</p>
                 <p class="custom-p"><span class="custom-p3">Khẩu phần:</span> 4 người</p>
                 <img src="assets/cahukhorieng.jpg"width="60%" style="display: block; margin: auto; margin-top: 10px; margin-bottom: 10px">  
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Nguyên Liệu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Nguyên Liệu</p>   
                 <p class="custom-p">•	Cá chép, rửa sạch với nước cốt chanh, cắt khúc 
                 <p class="custom-p">•	200g thịt ba chỉ, rửa sạch, cắt miếng nhỏ vừa ăn 
                 <p class="custom-p">•	1 củ riềng, gọt vỏ, rửa sạch, cắt sợi 
                 <p class="custom-p">•	200ml nước trà xanh 
                 <p class="custom-p">•	Tiêu xay, ớt 
                 <p class="custom-p">•	Gia vị: 1 gói Knorr Gia Vị Hoàn Chỉnh - Cá Kho Riềng cho món cá kho ngon đúng điệu</p>
-                <p class="custom-p" style="font-weight: 700; color: #538135; margin-top: 20px;">Cách nấu</p>   
+                <p class="custom-p text-green" style="font-weight: 700; margin-top: 20px;">Cách nấu</p>   
                 <p class="custom-p">•	Dùng gói Knorr Gia Vị Hoàn Chỉnh  
                 <p class="custom-p">•	Cá Kho Riềng ướp cá chép trong 15 phút cho ngấm gia vị.  
                 <p class="custom-p">•	Sắp vào nồi lần lượt một lớp riềng, một lớp thịt, một lớp cá và một lớp riềng trên cùng. Thêm nước trà xanh vào cho xăm xắp mặt cá.  
                 <p class="custom-p">•	Bắc nồi lên bếp, đun to lửa cho nồi cá sôi, sau đó vặn nhỏ lửa kho cá khoảng 45 phút cho cá chín.  
                 <p class="custom-p">•	Cho cá ra dĩa, trang trí với ớt, rắc chút tiêu xay. Dùng nóng với cơm.</p>
             
-            <h2 class="H2" id="cauhoi" style="margin-top: 50px;text-align: center;">CÂU HỎI CUỐI CHƯƠNG 2</h2>
+            <H2 text-green class="H2 text-green" id="cauhoi" style="margin-top: 50px;text-align: center;">CÂU HỎI CUỐI CHƯƠNG 2</H2 text-green>
 </div>
 </body>
 </html>
