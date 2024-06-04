@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    background: #F4F4F4;
+    ;
+}
+
+html,
+body {
+    overflow-wrap: break-word;
+}
+
+.navbar {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-shrink: 0;
+    background-color: none;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: sticky !important;
+    top: 0;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.return-link {
+    text-decoration: none;
+}
+
+.return-link:hover {
+    text-decoration: none;
+}
+
+.chevron-link {
+    color: #F47830;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.chevron-link:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page {
+    color: #212121;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.navbar a {
+    color: #212121;
+    text-decoration: none;
+}
+
+.items a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.items i {
+    font-size: 22px;
+}
+
+/* READING FRAME */
+
+.reading-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff; 
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 22px;
+    /* box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15); */
+    text-align: center;
+    padding: 20px;
+}
+
+.custom-h1 {
+    background-color: #fff;
+    margin-top: 50PX;
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 16pt;
+    font-style: bold;
+    font-weight: 700;
+    line-height: normal;
+    font-family: 'Times New Roman',serif;
+}
+
+.custom-p {
+    background-color: #fff;
+    text-align: left;
+    margin-left: 63px;
+    margin-right: 56px;
+    margin-top: 1px;
+    margin-bottom: 3px;
+    color: #212121;
+    text-align: justify;
+    font-size: 14pt;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    font-family: 'Times New Roman',serif;
+    /* 138.889% */
+}
+.custom-p2 {
+    background-color: #fff;
+    text-align: left;
+    margin-top: 1px;
+    margin-bottom: 3px;
+    color: #212121;
+    text-align: justify;
+    font-size: 14pt;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 25px;
+    font-family: 'Times New Roman',serif;
+    /* 138.889% */
+}
+.custom-p3 {
+    background-color: #fff;
+    text-align: left;
+    margin-top: 1px;
+    margin-bottom: 3px;
+    color: #212121;
+    text-align: justify;
+    font-size: 14pt;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    font-family: 'Times New Roman',serif;
+    /* 138.889% */
+}
+.trangtrachnhiembold {
+    background-color: #fff;
+	font-family: 'Times New Roman',serif;
+	font-size: 13.5pt;
+	font-style: bold;
+	color:#000000;
+    text-align: center;
+    font-style: bold;
+    font-weight: 700;
+}
+.trangtrachnhiem {
+    background-color: #fff;
+	font-family: 'Times New Roman',serif;
+	font-size: 13.5pt;
+	font-style: normal;
+	color:#000000;
+    text-align: center;
+}
+.banquyen{
+    background-color: #fff;
+	font-family: 'Arial',sans-serif;
+	font-size: 13.5pt;
+	color:#000000;
+    text-align: center;
+    font-style: italic;
+}
+.hr{
+    background-color: #fff;
+	line-height: 3px;
+	color:#000000;
+    text-align: center;
+}
+.tieude{
+    background-color: #fff;
+	font-family: 'Times New Roman',serif;
+	font-size: 12pt;
+	font-style: bold;
+	color:#000000;
+	text-align:center;
+    font-weight: 700;
+}
+.text{
+    background-color: #fff;
+	font-family: 'Times New Roman',serif;
+	font-size: 14pt;
+	font-style: bold;
+	color:#000000;
+	text-align: justify;
+}
+.textbang{
+    background-color: #fff;
+	font-family: 'Times New Roman',serif;
+	font-size: 14pt;
+	font-style: normal;
+	color:#000000;
+	margin-right: 100px;
+}
+.textbangtn{
+    background-color: #fff;
+	font-family: 'Times New Roman',serif;
+	font-size: 11pt;
+	font-style: italic;
+	color:#000000;
+}
+.H3{
+    background-color: #fff;
+    text-align: left;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-top: 5px;
+    color: #212121;
+    text-align: justify;
+    font-size: 14pt;
+    font-style: bold;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 20px;
+    font-family: 'Times New Roman',serif;
+    text-indent: 10px;
+}
+.H2{
+    background-color: #fff;
+    text-align: left;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-top: 20px;
+    color: #538135;
+    text-align: justify;
+    font-size: 16pt;
+    font-style: bold;
+    font-weight: 700;
+    line-height: 20px;
+    font-family: 'Times New Roman',serif;
+}
+.H1{
+    background-color: #fff;
+    text-align: center;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-top: 5px;
+    color: #212121;
+    text-align: center;
+    font-size: 16pt;
+    font-style: bold;
+    font-weight: 700;
+    line-height: 20px;
+    font-family: 'Times New Roman',serif;
+}
+.board-text1{
+    background-color: #fff;
+	font-family: 'Times New Roman',serif;
+	font-size: 11.5pt;
+	font-style: normal;
+	color:#000000;
+    font-weight: 400;
+    text-align: left;
+}
+.H4{
+    background-color: #fff;
+    text-align: left;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-top: 5px;
+    color: #212121;
+    text-align: justify;
+    font-size: 14.5pt;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: 'Times New Roman',serif;
+    text-indent: 10px;
+}
+.footnote{
+    background-color: #fff;
+	font-family: 'Times New Roman',serif;
+    margin-left: 63px;
+    margin-right: 56px;
+    margin-top: 5px;
+	font-size: 10pt;
+	font-style: normal;
+	color:#000000;
+    text-align: left;
+}
+
+th, tr {
+    background-color: white;
+    padding: 10px
+}
+.textbang2{
+	font-family: 'Times New Roman',serif;
+	font-size: 12pt;
+	font-style: normal;
+	color:#000000;
+    text-align: justify;
+    padding: 10px;
+}
+
+.nested-dropdowns {
+    /* Border */
+
+    /* Reset list styles */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.center-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nested-dropdowns li {
+    cursor: pointer;
+    position: relative;
+    background-color: #fff;
+    color: black;
+    padding: 5px 25px;
+    text-align: left;
+    width: 400px;
+}
+
+.textmucluc{
+    color: #000000;
+    text-align: left;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+/* The sub nested-dropdowns */
+.nested-dropdowns ul {
+    /* Border */
+    /* border: 1px solid #d1d5db; */
+
+    /* Hidden by default */
+    display: none;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+    /* Absolute position */
+    left: 0;
+    position: absolute;
+    top: 100%;
+    text-align: left;
+    width: 400px;
+
+    /* Reset styles */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* The second level sub nested-dropdowns */
+.nested-dropdowns ul ul {
+    left: 100%;
+    position: absolute;
+    top: 0;
+}
+
+/* Change background color of list item when being hovered */
+.nested-dropdowns li:hover {
+    background-color: rgb(254, 235, 222);
+    color: #F47830;
+}
+
+/* Show the direct sub nested-dropdowns when hovering the list item */
+.nested-dropdowns li:hover > ul {
+    display: block;
+}
+
+.nested-dropdowns__item {
+    background-color: transparent;
+}
+
+.nested-dropdowns > li {
+    background-color: transparent;
+}
+
+.nested-dropdowns > li:hover {
+    background-color: transparent;
+}
+
+.page-num {
+    display: grid !important;
+}
+
+.heading{
+    color: #F47830;
+    text-align: center;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: bold;
+    font-weight: 900;
+    line-height: bold;
+}
+
+a:link, a:visited, a:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+.parent-element img {
+    text-align: center;
+    background-color: #fff;
+}
+
+.chuthichhinh{
+    background-color: #fff;
+    font-family: 'Times New Roman',serif;
+    font-size: 12pt;
+    font-style: italic;
+    color:#000000;
+    text-align: center;
+    padding-top: 10px;
+}
