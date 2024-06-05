@@ -109,6 +109,7 @@ const hlElement = document.getElementsByClassName('reading-frame')[0];
 hlElement.addEventListener('mouseup', (e) => {
 	if (!highlight) return;
 	var textToHighlight = window.getSelection().toString();
+	if (!textToHighlight) return;
 	var html = hlElement.innerHTML;
 	var highlightedHtml = html.replace(
 		new RegExp(textToHighlight, 'g'),

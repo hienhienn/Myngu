@@ -155,7 +155,7 @@
                     </svg>
                 </a>
                     
-                <a href="#"><i class="fa-solid fa-expand" style="color: #F47830;" onclick="fullScreen()"></i></a>
+                <a href="#" class="hoverBtn"><i class="fa-solid fa-expand" style="color: #F47830;" onclick="fullScreen()"></i></a>
                 <a href="#"><i class="fa-regular fa-bookmark" style="color: #F47830;"></i></a>
                 <!-- <a href="#"><i class="fa-solid fa-gear" style="color: #F47830;"></i></a> -->
                 <ul class="nested-dropdowns custom-dropdowns" style="width: 42px;">
@@ -382,7 +382,7 @@
                 <span class="number-ques">Câu hỏi 1:</span><b> "Bún thang"</b> là món ăn đặc sản ở đâu?
                 <div class="div-ques">
                     <div class="row-ques">
-                        <input type="radio" name="q1">
+                        <input type="radio" name="q1" class="true">
                         <label class="true">Hà Nội</label>
                     </div>
                     <div class="row-ques">
@@ -399,15 +399,15 @@
                 <span class="number-ques">Câu hỏi 2:</span><b> "Bún thang"</b> là món ăn đặc sản ở đâu?
                 <div class="div-ques">
                     <div class="row-ques">
-                        <input type="checkbox">
+                        <input type="checkbox" class="true" name="q2">
                         <label class="true">Hà Nội</label>
                     </div>
                     <div class="row-ques">
-                        <input type="checkbox">
+                        <input type="checkbox" class="true" name="q2">
                         <label class="true">Hải Phòng</label>
                     </div>
                     <div class="row-ques">
-                        <input type="checkbox">
+                        <input type="checkbox" name="q2">
                         <label>Nam Định</label>
                     </div>
                 </div>
@@ -420,7 +420,7 @@
                         <label>Đúng</label>
                     </div>
                     <div class="row-ques">
-                        <input type="radio" name="q3">
+                        <input type="radio" class="true" name="q3">
                         <label class="true">Sai</label>
                     </div>
                 </div>
@@ -429,6 +429,15 @@
                 <div class="btn-ques" onclick="onSubmit()">Submit answer</div>
                 <div class="btn-ques" onclick="onDelete()">Delete</div>
             </div>
+            <div id="pop-up">
+                <div class="main-content">
+                    <p id="title-1">Điểm của bạn là <span style="color: #F47830;" id="score"></span></p>
+                    <p id="title-2">Bạn đã trả lời đúng <span id="num"></span> câu hỏi</p>
+                    <div class="btn-ques mt-2" onclick="onClose()">Đóng</div>
+
+                </div>
+            </div>
+       
             <script src="./question.js"></script>
 </div>
 </body>
